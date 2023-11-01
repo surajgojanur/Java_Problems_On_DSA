@@ -1,0 +1,42 @@
+package abhishek;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class MenuExample extends JFrame {
+	JMenuBar mb;
+	JMenu file,edit,tools,option;
+	JMenuItem nw,sv,svas,exit,cut,cpy,pst;
+	MenuExample(){
+		mb=new JMenuBar();
+		file=new JMenu("FILE");
+		edit=new JMenu("EDIT");
+		tools=new JMenu("TOOLS");
+		option=new JMenu("OPTION");
+		nw=new JMenuItem("NEW");
+		sv=new JMenuItem("SAVE");
+		svas=new JMenuItem("SAVE As");
+		exit=new JMenuItem("EXIT");
+		cut=new JMenuItem("CUT");
+		cpy=new JMenuItem("COPY");
+		pst=new JMenuItem("PASTE");
+		setTitle("Suraj");
+		
+		file.add(nw);		file.add(sv);		file.add(svas);		file.add(exit);
+		edit.add(cut);		edit.add(cpy);		edit.add(pst);
+		mb.add(file);		mb.add(edit);		mb.add(tools);		mb.add(option);
+		setJMenuBar(mb);
+		setSize(500,600);
+		setVisible(true);
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MenuExample ob=new MenuExample();
+
+	}
+
+}

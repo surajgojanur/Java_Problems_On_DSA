@@ -1,0 +1,98 @@
+package lab2;
+
+import java.awt.FlowLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+
+public class Item_Event1 extends JFrame implements ItemListener {
+
+	JRadioButton b1,b2;
+	JCheckBox s1,s2,s3,s4,s5,s6;
+	JTextArea t1;
+	ButtonGroup grp1;
+	Item_Event1()
+	{
+		b1=new JRadioButton("AC Coach");
+		b2=new JRadioButton(" NON AC Coach");
+		s1=new JCheckBox("Seat 1");
+		s2=new JCheckBox("Seat 2");
+		s3=new JCheckBox("Seat 3");
+		s4=new JCheckBox("Seat 4");
+		s5=new JCheckBox("Seat 5");
+		s6=new JCheckBox("Seat 6");
+		t1=new JTextArea(20,50);
+		grp1=new ButtonGroup();
+		
+		//setLayout(null);
+		setLayout(new FlowLayout());
+		setTitle("Train Register");
+		setVisible(true);
+		setSize(600,700);
+		
+		
+		b1.setBounds(100,50,100,60);
+		b2.setBounds(100,50,100,60);
+		
+		s1.setBounds(100,100,100,60);
+		s2.setBounds(200,100,100,60);
+		s3.setBounds(300,100,100,60);
+		s4.setBounds(400,100,100,60);
+		s5.setBounds(100,200,100,60);
+		s6.setBounds(200,200,100,60);
+		
+		//t1.setBounds(100,300,300,100);
+		
+		
+		add(s1);add(s2);add(s3);add(s4);add(s5);add(s6);
+		grp1.add(b1);grp1.add(b2);
+		add(b1);add(b2);
+		add(t1);
+		
+		b1.addItemListener(this);
+		b2.addItemListener(this);
+		
+		s1.addItemListener(this);
+		s2.addItemListener(this);
+		s3.addItemListener(this);
+		s4.addItemListener(this);
+		s5.addItemListener(this);
+		s6.addItemListener(this);
+	}
+	
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		
+		String s="Your Booking Confiramtion\n";
+		
+		if(b1.isSelected()) s=s+"AC Coach\n";
+		else s=s+"NON AC Coach\n";
+		
+		if(s1.isSelected()) s=s+"1\n";
+		if(s2.isSelected()) s=s+"2\n";
+		if(s3.isSelected()) s=s+"3\n";
+		if(s4.isSelected()) s=s+"4\n";
+		if(s5.isSelected()) s=s+"5\n";
+		if(s6.isSelected()) s=s+"6\n";
+		
+		t1.setText(s);
+	/*	if(e.getSource()==s1)  
+            t1.setText("Seats : "     
+            + (e.getStateChange()==1?"Seat 1 reserved":"Seat 1 not reserved"));   
+        if(e.getSource()==s2)  
+        t1.setText("Seats : "     
+        + (e.getStateChange()==1?"Seat 2 reserved":"Seat 2 not reserved"));*/
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Item_Event1 ob=new Item_Event1();
+	}
+
+}

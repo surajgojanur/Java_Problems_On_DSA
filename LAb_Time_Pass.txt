@@ -1,0 +1,89 @@
+package cp1;
+
+import java.awt.event.ItemEvent;
+import java.awt.*;
+import java.awt.event.ItemListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JRadioButton;
+
+public class Suraj_19_Dec extends JFrame implements ItemListener {
+	JLabel lb1,lb2;
+	JRadioButton b1,b2;
+	JCheckBox c1,c2;
+	ButtonGroup gb1;
+	Suraj_19_Dec(){
+		lb1=new JLabel("Program By Suraj");
+		lb2=new JLabel("OUTPUT");
+		b1=new JRadioButton("Do");
+		b2=new JRadioButton("Die");
+		c1=new JCheckBox("Football");
+		c2=new JCheckBox("Gym");
+		gb1=new ButtonGroup();
+		setLayout(null);
+		getContentPane().setBackground(Color.PINK);
+		//b1.setBackground(Color.PINK);
+		b1.setOpaque(false);
+		b2.setOpaque(false);
+		c1.setOpaque(false);
+		c2.setOpaque(false);
+		lb1.setForeground(Color.WHITE);
+		b1.setForeground(Color.WHITE);
+		b2.setForeground(Color.WHITE);
+		c1.setForeground(Color.WHITE);
+		c2.setForeground(Color.WHITE);
+		//lb2.setForeground(Color.WHITE);
+		//lb2.setForeground(Color.WHITE);
+		//lb1.setBackground(Color.PINK);
+		//b2.setBackground(Color.PINK);
+		
+		c1.setBackground(Color.PINK);
+		c2.setBackground(Color.PINK);
+		lb2.setBackground(Color.PINK);
+		//setLayout(new BorderLayout());
+		setContentPane(new JLabel(new ImageIcon("C:\\Users\\student\\Downloads\\kallavesi.jpg")));
+		lb1.setBounds(225,50,300,60);
+		b1.setBounds(50,100,300,60);
+		b2.setBounds(350,100,300,60);
+		c1.setBounds(50,200,300,100);
+		c2.setBounds(350,200,300,100);
+		lb2.setBounds(200,250,550,200);
+		gb1.add(b1);gb1.add(b2);
+		add(lb1);add(lb2);	add(b1);add(b2); add(c1);add(c2);
+		
+		setSize(5000,3333);
+		setVisible(true);
+		setTitle("Radio Button & Check Box");
+		b1.addItemListener(this);
+		b2.addItemListener(this);
+		c1.addItemListener(this);
+		c2.addItemListener(this);
+		
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent arg0) {
+		// TODO Auto-generated method stub
+		String s="You Have Selected  :-";
+		if(b1.isSelected())
+			s=s+"\n  Let's Do it Now";
+		else 
+			s=s+"Now You Die";
+		if(c1.isSelected()) s=s+"\n  Today u will play Football";
+		if(c2.isSelected()) s=s+"\n  Today u will go to Gym";
+		
+		lb2.setText(s);
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Suraj_19_Dec();
+
+	}
+
+}

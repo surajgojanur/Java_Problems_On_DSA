@@ -1,0 +1,71 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Calci extends JFrame implements ActionListener {
+	
+	JLabel l1,l2,l3,l4;
+	JTextField t1,t2;
+	JButton b1,b2;
+	
+	Calci()
+	{
+		l1=new JLabel("Calculator");
+		l2=new JLabel("First Number");
+		l3=new JLabel("Second Number");
+		l4=new JLabel();
+		t1=new JTextField();
+		t2=new JTextField();
+		b1=new JButton("ADD");
+		b2=new JButton("SUB");
+		
+		l1.setBounds(300,50,500,60);
+		l2.setBounds(80,150,300,60);
+		l3.setBounds(80,250,300,60);
+		l4.setBounds(200,400,300,60);
+		t1.setBounds(450,150,300,60);
+		t2.setBounds(450,250,300,60);
+		b1.setBounds(100,450,200,60);
+		b2.setBounds(200,450,200,60);
+		add(l1);add(l2);add(l3);add(l4);
+		add(t1);add(t2);add(b1);add(b2);
+		setTitle("Calculator");
+		setVisible(true);
+		setLayout(null);
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		// TODO Auto-generated method stub
+
+		int n1=Integer.parseInt(t1.getText());
+		int n2=Integer.parseInt(t2.getText());
+		
+		String s=ae.getActionCommand();
+		if(s.equals("ADD"))
+		{
+			int ans=n1+n2;
+			l4.setText("Result = "+ans);
+		}
+		else
+		{
+			int sub=n1-n2;
+			l4.setText("Result = "+sub);
+		}
+			
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calci ob=new Calci();
+
+	}
+
+}

@@ -1,0 +1,57 @@
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Calci extends JFrame implements ActionListener {
+	JButton b1,b2;
+	JLabel l1;
+	Calci()
+	{
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		b1=new JButton("OK");
+		b2=new JButton("Cancel");
+		l1=new JLabel();
+		setLayout(null);
+		l1.setBounds(300,100,500,100);
+		b1.setBounds(200,300,300,100);
+		b2.setBounds(200,500,300,100);
+		add(l1);
+		add(b1);
+		add(b2);
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		setSize(800,700);
+		setTitle("Action Event Example Suraj ");
+		setVisible(true);
+		
+	}
+
+//	@Override
+	public void actionPerformed(ActionEvent ae) {
+	String s=ae.getActionCommand();
+	if(s.equals("OK"))
+	l1.setText("OK button was clicked");
+	else
+	l1.setText("Cancel button was clicked");
+
+	}
+
+	public static void main(String[] args) {
+		Calci ob=new Calci ();
+
+	}
+
+}

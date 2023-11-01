@@ -1,0 +1,93 @@
+package savi1;
+
+import java.awt.FlowLayout;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBox;
+
+import javax.swing.JFrame;
+
+import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
+
+
+public class buttonex extends JFrame implements ItemListener{
+	JCheckBox c1,c2,c3,c4;
+	JRadioButton b1,b2;
+	ButtonGroup cbg;
+	JTextArea t1;
+	String msg=null;
+	buttonex()
+	{
+		setLayout(null);
+		c1=new JCheckBox("Singing");
+		c2=new JCheckBox("Music",true);
+		c3=new JCheckBox("Swimming");
+		c4=new JCheckBox("Dancing");
+        
+		t1=new JTextArea(8,6);
+		
+		c1.setBounds(100,100,100,60);
+		c2.setBounds(100,200,150,60);
+		c3.setBounds(100,300,200,60);
+		c4.setBounds(100,400,250,60);
+		
+		t1.setBounds(400,200,250,100);
+		
+		add(c1);
+		add(c2);
+		add(c3);
+		add(c4);
+		
+		add(t1);
+		
+		b1=new JRadioButton("1st sem",true);
+		b2=new JRadioButton("2nd sem");
+		
+		
+		b1.setBounds(200,500,150,60);
+		b2.setBounds(400,500,150,60);
+		
+		cbg=new ButtonGroup();
+		cbg.add(b1);
+		cbg.add(b2);
+		
+		add(b1);
+		add(b2);
+		setVisible(true);
+		setSize(500,400);
+		
+		
+		c1.addItemListener (this);
+		c2.addItemListener (this);
+		b1.addItemListener (this);
+		b2.addItemListener (this);
+	
+	
+	}
+	
+	public void itemStateChanged(ItemEvent e) {
+		if (c1.isSelected())                            msg="Singing";
+		
+		if (c2.isSelected())							msg+="Music";
+		
+		if (b1.isSelected())							msg+=" \n 1st sem";
+		
+		if (b2.isSelected())							msg+=" \n 2st sem";
+		
+		t1.setText(msg);
+		
+		msg="";
+
+	}
+
+	public static void main(String[] args) {
+		
+		 new buttonex();
+		// TODO Auto-generated method stub
+
+	}
+
+}

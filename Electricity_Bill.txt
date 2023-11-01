@@ -1,0 +1,87 @@
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+public class Electricitybill extends JFrame implements ActionListener {
+	
+		JLabel lb1,lb2,lb3,lb4;
+		JTextField tname,tunits,tbill;
+		JButton cal,clr;
+		Electricitybill()
+		{
+			lb1=new JLabel("Electricity Bill");
+			lb2=new JLabel("Enter Consumer Name");
+			lb3=new JLabel("Enter Units Consumed");
+			lb4=new JLabel("Total Bill");
+			tname=new JTextField(50);
+			tunits=new JTextField(50);
+			tbill=new JTextField(50);
+			cal=new JButton("Calculate");
+			clr=new JButton("Clear");
+			
+			setLayout(null);
+			
+			
+			lb1.setBounds(100,50,300,60);
+			lb2.setBounds(50,100,300,60);
+			lb3.setBounds(50,200,300,60);
+			lb4.setBounds(50,300,250,60);
+			
+			tname.setBounds(400,100,200,60);
+			tunits.setBounds(400,200,200,60);
+			tbill.setBounds(400,300,200,60);
+			
+			cal.setBounds(100,500,250,100);
+			clr.setBounds(400,500,250,100);
+			
+			add(lb1);	add(lb2);	add(tname);		add(lb3);	add(tunits);	add(lb4);add(tbill);
+			
+			add(cal);add(clr);
+			
+			cal.addActionListener(this);
+			clr.addActionListener(this);
+			setSize(600,500);
+			setVisible(true);
+			setTitle("Electricity Bill");
+		}
+
+	
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		double bill=0;
+		int units=Integer.parseInt(tunits.getText());
+		String s=e.getActionCommand();
+		if(s.equals("Calculate"))
+		{
+			if(units<=100)
+				bill=units*1.00;
+			else if(units>100 && units<=200)
+				bill=100+(units-100)*1.5;
+			else 
+				bill=100+150+(units-200)*2.50;
+			tbill.setText(String.valueOf(bill));
+			
+		}
+		else
+		{
+			tname.setText("");
+			tunits.setText("");
+			tbill.setText("");
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		new Electricitybill();
+
+	}
+
+}
