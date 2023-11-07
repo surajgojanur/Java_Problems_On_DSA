@@ -1,14 +1,21 @@
 class Product_of_Array_Except_Self {
     public int[] productExceptSelf(int[] nums) {
-        Set <Integer> set=new HashSet<>;
-        for(int num:nums)
-        {
-            set.add(num);
+        int n=nums.length;
+        int[] output=new int[n];
+        int rightSide=1;
+        int leftSide=1;
+
+        for(int i=0;i<n;i++){
+            output[i]=leftSide;
+            leftSide *= nums[i];
         }
-        for(int set1:set)
-        {
-            set1 *= set;
+
+        for(int j=n-1; j>=0;j--){
+            output[j] *= rightSide;
+            rightSide *= nums[j];
         }
-        return set1;
+
+        return output;
+        
     }
 }
