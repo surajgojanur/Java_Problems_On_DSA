@@ -14,5 +14,6 @@ class Decode_Ways {
             count2 = count;  // count2 prev sol
         }
         return count2;
+        //return
     }
 }
