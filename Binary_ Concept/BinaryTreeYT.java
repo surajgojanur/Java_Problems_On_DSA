@@ -17,7 +17,7 @@ public class BinaryTreeYT{
 
         public static Node buildTree(int nodes[]){
             idx++;
-            if(node[idx]==-1){
+            if(nodes[idx]==-1){
                 return null;
             }
             Node newNode=new Node(nodes[idx]);
