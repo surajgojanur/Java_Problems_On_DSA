@@ -15,12 +15,12 @@ public class BinaryTreeYT{
     static class BinaryTree{
         static int idx=-1;
 
-        public static Node buildTree(int node[]){
+        public static Node buildTree(int nodes[]){
             idx++;
             if(node[idx]==-1){
                 return null;
             }
-            Node newNode=new Node(node[idx]);
+            Node newNode=new Node(nodes[idx]);
             newNode.left=buildTree(nodes);
             newNode.right=buildTree(nodes);
 
