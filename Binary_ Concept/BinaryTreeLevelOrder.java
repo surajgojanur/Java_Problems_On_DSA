@@ -4,11 +4,11 @@ class BinaryTreeLevelOrder{
         Node left;
         Node right;
 
-        Node(int data1{
-            this.data=data;
+        Node(int data){
+            this.data= data;
             this.right=null;
             this.left=null;            
-        })
+        }
     }
     static class BinaryTree{
         static int idx=-1;
@@ -40,8 +40,10 @@ class BinaryTreeLevelOrder{
                 if(q.isEmpty()){
                     break;
                 }
-                else{q.add(null);
+                else{
+                    q.add(null);
                 }
+            }
                 else{
                     System.out.print(curr.data+" ");
                     if(curr.left!=null){
@@ -54,4 +56,3 @@ class BinaryTreeLevelOrder{
             }
         }
     }
-}
