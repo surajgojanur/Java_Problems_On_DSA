@@ -12,9 +12,9 @@ public class BinaryTreeSumOfNodes{
     }
     static class BinaryTree{
         static int idx=-1;
-        public static Node buildTree(inr nodes[]){
+        public static Node buildTree(int nodes[]){
             idx++;
-            if(nodes[idx]==null){
+            if(nodes[idx]==-1){
                 return null;
             }
 
@@ -31,16 +31,16 @@ public class BinaryTreeSumOfNodes{
             return 0;
         }
 
-        int leftSum=sumofNodes(root.left);
-        int rightSum=sumofNodes(root.right);
+        int leftSum=sumOfNodes(root.left);
+        int rightSum=sumOfNodes(root.right);
 
         return leftSum+rightSum+root.data;
     }
     public static void main(String args[]){
-        int nodes[]={1,2,4,-1,-1,-5,-1,-1,3,-1,6,-1,-1};
+        int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(nodes);
-
-        //System.out.print()
+        System.out.print(sumOfNodes(root));
+         
     }
 }
