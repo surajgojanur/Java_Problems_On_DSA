@@ -1,3 +1,4 @@
+import java.util.*;
 class BinaryTreeLevelOrder{
     static class Node{
         int data;
@@ -15,13 +16,13 @@ class BinaryTreeLevelOrder{
         public static Node buildTree(int nodes[]){
             idx++;
             if(nodes[idx]==-1){
-                return;
+                return null;
             }
             Node newNode=new Node(nodes[idx]);
             newNode.left=buildTree(nodes);
             newNode.right=buildTree(nodes);
 
-            return;
+            return newNode;
         }
     }
     public static void levelorder(Node root){
@@ -53,6 +54,12 @@ class BinaryTreeLevelOrder{
                         q.add(curr.right);
                     }
                 }
-            }
+            }   
+        }
+        public static void main(String args[]){
+            int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
+            BinaryTree tree=new BinaryTree();
+            Node root=tree.buildTree(nodes);
+            levelorder(root);
         }
     }
