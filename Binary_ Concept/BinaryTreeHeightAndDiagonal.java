@@ -11,6 +11,16 @@ public class BinaryTreeHeightAndDiagonal{
             this.right=null;
         }
     }
+    static class TreeInfo{
+        int height;
+        int diameter;
+
+            TreeInfo(int height,int diameter){
+                this.height=height;
+                this.diameter=diameter;
+            }
+        }
+        
     static class BinaryTree{
         static int idx=-1;
         public static Node buildTree(int nodes[]){
@@ -35,9 +45,9 @@ public class BinaryTreeHeightAndDiagonal{
 
         int myHeight=Math.max(leftTI.height,rightTI.height)+1;
 
-        int daim1=leftIT.height+leftIT.height+1;
-        int daim2=leftIT.diam;
-        int daim3=right.diam;
+        int diam1=leftTI.height+leftTI.height+1;
+        int diam2=leftTI.diameter;
+        int diam3=rightTI.diameter;
 
         int myDiam=Math.max(diam1,Math.max(diam2,diam3));
         return new TreeInfo(myHeight,myDiam);
@@ -48,6 +58,6 @@ public class BinaryTreeHeightAndDiagonal{
         BinaryTree tree = new BinaryTree();
         Node root=tree.buildTree(nodes);
 
-        System.out.print(diameter(root).diam);
+        System.out.print(diameter(root).diameter);
     }
 }
