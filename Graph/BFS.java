@@ -10,7 +10,7 @@ public class BFS{
             this.wt=w;
         }
     }
-    static void createGraph(ArrayList<Edge> graph[]){
+    static void createGraph(ArrayList<Edge> graph[],int v){
         for(int i=0;i<graph.length;i++){
             graph[i]=new ArrayList<>();
         }
@@ -39,11 +39,28 @@ public class BFS{
     }
     public static void bfs(ArrayList<Edge> graph[],int v){
         Queue<Integer> q=new LinkedList<>();
-        boolean vis[]=new boolean[v];
+        boolean visited[]=new boolean[v];
         q.add(0);
 
         while(!q.isEmpty()){
             int curr=q.remove();
+            if(!visited[curr]){
+                System.out.print(curr+" ");
+                visited[curr]=true;
+
+                for(int i=0;i<graph[curr].size();i++){
+                    Edge e=graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
         }
+        System.out.println();;
+    }
+    public static void main(String args[]){
+        int v=7;
+        ArrayList<Edge> graph[]=new ArrayList[v];
+        createGraph(graph,v);
+
+        bfs(graph,v);
     }
 }
