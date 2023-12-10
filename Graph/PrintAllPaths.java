@@ -58,5 +58,11 @@ public class PrintAllPaths{
     public static void main(String args[]){
         int v=7;
         ArrayList<Edge> graph[]=new ArrayList[v];
+        createGraph(graph);
+        int src=0;
+        int tar=5;
+        boolean vis[]=new boolean[v];
+        vis[src]=true;
+        printAllPaths(graph, src, tar, " "+src, vis);
     }
 }
