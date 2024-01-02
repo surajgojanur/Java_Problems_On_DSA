@@ -12,7 +12,6 @@ class Max_Sub_Array {
                 total = 0; // Reset total if it becomes negative
             }
         }
-        
         return max;
     }
 }
