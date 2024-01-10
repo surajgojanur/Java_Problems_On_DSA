@@ -1,0 +1,3 @@
+class Merge_Intervals{
+    
+}
