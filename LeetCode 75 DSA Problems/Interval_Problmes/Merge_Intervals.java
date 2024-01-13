@@ -1,3 +1,3 @@
 class Merge_Intervals{
-    public int
+    public int intervals
 }
