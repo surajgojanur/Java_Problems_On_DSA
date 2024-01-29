@@ -1,14 +1,14 @@
-
 class Merge_k_Sorted_Lists {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists==null || lists.length==0) return null;
-        
+
+
         ListNode head=new ListNode(0);
         ListNode temp=head;
         List<Integer> l=new ArrayList<>();
         for(ListNode list:lists){
             while(list!=null){
-                
+
                 l.add(list.val);
                 list=list.next;
             }
