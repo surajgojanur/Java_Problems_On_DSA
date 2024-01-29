@@ -8,6 +8,7 @@ class Merge_k_Sorted_Lists {
         List<Integer> l=new ArrayList<>();
         for(ListNode list:lists){
             while(list!=null){
+                
                 l.add(list.val);
                 list=list.next;
             }
