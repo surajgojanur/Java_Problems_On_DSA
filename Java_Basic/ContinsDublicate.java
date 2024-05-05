@@ -8,7 +8,7 @@ class ContinsDublicate{
         }
         return false;
     }
-    //suraj
+    //
     public static void main(String args[])
     ContinsDublicate st=new ContinsDublicate();
     int[] array1=[1,2,3,4];
