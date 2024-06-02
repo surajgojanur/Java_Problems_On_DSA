@@ -1,6 +1,6 @@
 class Solution {
     
-//suraj    public int lengthOfLongestSubstring(String s) {
+public int lengthOfLongestSubstring(String s) {
         HashSet<Character> st=new HashSet<>();
         
         int max=0;
