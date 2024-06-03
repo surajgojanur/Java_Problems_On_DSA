@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> map = new HashMap<>();
-        
+        //gb
         for (String str : strs) {
             // Initialize an array to count the occurrences of each character in the string
             int[] count = new int[26];
