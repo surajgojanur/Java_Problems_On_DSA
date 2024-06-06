@@ -7,7 +7,7 @@ class Solution {
                     count++;
                 }
             }
-        }
+        }//suraj
         return count;
     }
    private boolean isPal(String str,int left,int right){
