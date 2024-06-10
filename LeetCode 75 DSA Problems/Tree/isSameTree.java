@@ -1,6 +1,7 @@
 
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
+        //suraj
         if(p==null && q==null){
             return true;
         }
