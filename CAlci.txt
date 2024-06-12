@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class Calci extends JFrame implements ActionListener {
-	
+	//sueaj
 	JLabel l1,l2,l3,l4;
 	JTextField t1,t2;
 	JButton b1,b2;
