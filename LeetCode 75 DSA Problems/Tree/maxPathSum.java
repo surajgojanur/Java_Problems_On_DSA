@@ -30,7 +30,7 @@ class Solution {
        return Math.max(leftSum, rightSum )+root.val;
     }
     public int maxPathSum(TreeNode root) {
-        maximumSum=Integer.MIN_VALUE;
+        maximumSum=Integer.MIN_VALUE;//suraj
         dfs(root);
         return maximumSum;
     }
