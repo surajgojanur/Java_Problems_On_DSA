@@ -18,12 +18,12 @@
         Queue<Node> q=new LinkedList<>();
         q.add(root);
         q.add(null);
-        List<List<Integer>> lt=new List<List<Integer>>;
+        List<List<Integer>> lt=new ArrayList<>();
         while(!q.isEmpty()){
             Node curr=q.pull();
             if(curr==null){
                 if(q.isEmpty()){
-                    return ;
+                    return lt;
                 }
                 q.add(null);
 
@@ -36,5 +36,5 @@
                 q.add(curr.right);
             }
         }
+        return lt;
     }
-}
