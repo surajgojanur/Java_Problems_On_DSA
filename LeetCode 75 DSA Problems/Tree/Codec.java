@@ -14,7 +14,16 @@ public class Codec {
         if(root==null) return "";
         Queue<TreeNode> q=new LinkedList<>();
         StringBuilder res=new StringBuilder();
-        
+        q.add(root);
+
+        while(!q.isEmpty()){
+            TreeNode Node=q.poll();
+            if(node==null){
+                res.append("n ");
+                continue;
+            }
+            res.append(node.val+" ");
+        }
     }
 
     // Decodes your encoded data to tree.
