@@ -17,7 +17,7 @@
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) 
     {
-        List<List<Integer>>al=new ArrayList<>();
+        List<List<Integer>>al=new ArrayList<>();//suraj
         pre(root,0,al);
         return al;
     }
