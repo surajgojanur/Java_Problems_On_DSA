@@ -17,7 +17,7 @@
             q.add(root);
 
             while(!q.isEmpty()){
-                TreeNode Node=q.poll();
+                TreeNode node=q.poll();
                 if(node==null){
                     res.append("n ");
                     continue;
@@ -31,7 +31,18 @@
 
         // Decodes your encoded data to tree.
         public TreeNode deserialize(String data) {
-            
+            if(data=="")return null;
+            Queue<TreeNode> q=new LinkedList<>();
+            String[] values=data.split(" ");
+            TreeNode root=new TreeNode(Integer.paraseInt(values[0]));
+            q.add(root);
+
+            for(int i=1;i<values.length;i++){
+                TreeNode parent=q.poll();
+                if(!values[i].equals("n")){
+                    
+                }
+            }
         }
     }
 
