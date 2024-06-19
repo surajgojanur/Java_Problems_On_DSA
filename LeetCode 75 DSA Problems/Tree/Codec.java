@@ -40,7 +40,12 @@
             for(int i=1;i<values.length;i++){
                 TreeNode parent=q.poll();
                 if(!values[i].equals("n")){
-                    
+                    TreeNode left=new TreeNode(Integer.paraseInt(values[i]));
+                    parent.left=left;
+                    q.add(left);
+                }
+                if(!values[++i].equals("n")){
+                    TreeNode right
                 }
             }
         }
