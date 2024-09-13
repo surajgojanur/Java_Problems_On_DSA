@@ -7,14 +7,14 @@ import org.springframework.stereotype.Component;
 public class Dev {
 
     @Autowired
-    private Laptop laptop;
-
-    public void Dev(Laptop laptop){
-        this.laptop=laptop;
-    }
+    private Computer comp;
+//
+//    public void Dev(Laptop laptop){
+//        this.laptop=laptop;
+//    }
 
     public void build(){
-        laptop.complie();
+        comp.complie();
         System.out.printf("Working on Basic Stuffff");
     }
 }

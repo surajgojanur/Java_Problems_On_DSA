@@ -3,8 +3,8 @@ package com.SpringDependency.SpringDependency2;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Laptop implements Computer {
+public class Desktop implements Computer {
     public void complie(){
-        System.out.println("Laptop !!!");
+        System.out.println("Laptop !!! Desktop ");
     }
 }
