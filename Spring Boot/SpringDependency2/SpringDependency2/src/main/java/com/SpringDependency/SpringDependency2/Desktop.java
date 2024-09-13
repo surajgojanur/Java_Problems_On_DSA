@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 @Primary
 public class Desktop implements Computer {
     public void complie(){
+        //suraj
         System.out.println("Laptop !!! Desktop ");
     }
 }
