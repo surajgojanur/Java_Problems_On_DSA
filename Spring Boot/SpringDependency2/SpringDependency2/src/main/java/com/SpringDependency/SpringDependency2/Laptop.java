@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+//@Primary
 public class Laptop implements Computer {
     public void complie(){
         System.out.println("Laptop !!!");
