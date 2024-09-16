@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25e84f7a-6d28-42d4-b28f-da71d41fef0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/suraj/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/suraj/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/suraj/Dev.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/suraj/Dev.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
-    </list>
+    <list default="true" id="25e84f7a-6d28-42d4-b28f-da71d41fef0f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
