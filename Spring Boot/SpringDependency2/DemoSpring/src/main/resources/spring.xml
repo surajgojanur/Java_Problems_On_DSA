@@ -7,4 +7,7 @@
     <bean id="dev" class="org.suraj.Dev">
 
     </bean>
+    <bean id="laptop" class="org.suraj.Laptop">
+
+    </bean>
 </beans>
