@@ -1,7 +1,7 @@
 package org.suraj;
 
 public class Laptop {
-    public Dev(){
+    public Laptop(){
         System.out.printf("This is Laptop constrctor");
     }
     public void complie(){

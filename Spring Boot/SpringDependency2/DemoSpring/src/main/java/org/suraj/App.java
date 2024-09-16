@@ -15,7 +15,7 @@ public class App
         System.out.println( "Hello World!" );
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Dev obj  =(Dev) context.getBean("dev");
-        obj.build();
+//        obj.build();
 
     }
 }
