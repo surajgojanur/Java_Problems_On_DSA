@@ -134,6 +134,51 @@ public class All_fun {
 			for(int i=0;i<n;i++) {
 				System.out.println(array1[i]);
 			}
+			
 		
 	}
+		public void Student1(){
+			
+			String student_name=ob1.readString("Enter the Student Name");
+			int science=ob1.readInt("Enter the "+student_name+" Marks in Science");
+			int social=ob1.readInt("Enter the "+student_name+" Marks in social");
+			int math=ob1.readInt("Enter the "+student_name+" Marks in mathmatics");
+			int english=ob1.readInt("Enter the "+student_name+" Marks in English");
+			int total=(science+social+math+english)*100/400;
+
+			
+			if(total>90) {
+				ob1.println(student_name+" has scored A grade");
+			}
+			else if(80<total && total<90) {
+				ob1.println(student_name+" has scored B grade");
+			}
+			else if(70<total && total<80) {
+				ob1.println(student_name+" has scored C grade");
+			}
+			else if(60<total && total<70) {
+				ob1.println(student_name+" has scored D grade");
+			}
+			else if(35<total && total<60) {
+				ob1.println(student_name+" has Passed ");
+			}
+			else if(total<35) {
+				ob1.println(student_name+" has Failed");
+			}
+			
+		}
+		public void Linear_Search() {
+			int n=ob1.readInt("Please enter number of elemts that u wnat to insert");
+			int[] ar1=new int[n];
+			for(int i=0;i<n;i++) {
+				ar1[i]=ob1.readInt("Enter element"+i+" ");
+			}
+			int find_element=ob1.readInt("Enter the element that u wnat to find");
+			//Linear sorting
+			for(int i=0;i<n;i++) {
+				if(ar1[i]==find_element) {
+					ob1.println("Element "+find_element+" found at "+i);
+				}
+			}
+		}
 }

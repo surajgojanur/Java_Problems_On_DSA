@@ -18,6 +18,8 @@ public class Main_class {
 					+ "\n4.add_Two_Matrix"
 					+ "\n5.simpe_Calculator"
 					+ "\n6.sorting_Array"
+					+ "\n7.Student Grading System"
+					+ "\n8.Linear Search"
 					+ "\n0.Exit");
 			case1=ob1.readInt("\nEnter your choice");
 			switch(case1) {
@@ -43,6 +45,15 @@ public class Main_class {
 				break;
 			case 6:
 				ob2.sorting_Array();
+				ob1.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				break;
+				
+			case 7:
+				ob2.Student1();
+				ob1.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+				break;
+			case 8:
+				ob2.Linear_Search();
 				ob1.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 				break;
 			
