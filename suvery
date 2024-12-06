@@ -1,66 +1,28 @@
-class Sorting {
-    public static void sortedDistances(int[] distances, String[] namesOfCities) {
-        int n = distances.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (distances[j] > distances[j + 1]) {
-                    // Swap distances
-                    int temp = distances[j];
-                    distances[j] = distances[j + 1];
-                    distances[j + 1] = temp;
-                    // Swap corresponding city names
-                    String tempCity = namesOfCities[j];
-                    namesOfCities[j] = namesOfCities[j + 1];
-                    namesOfCities[j + 1] = tempCity;
-                }
-            }
-        }
-
-        // Print sorted cities with distances
-        for (int i = 0; i < n; i++) {
-            System.out.println(namesOfCities[i] + " " + distances[i]);
-        }
-    }
-
-    public static void main(String[] args) {
-        String[] citiesFromZurich = {
-            "Bern", "Lucerne", "InterLaken", "Grindelwald",
-            "Engelberg", "Geneva", "Murren", "Basel", "Zermatt", "Jungfraujoch"
-        };
-        int[] distanceFromZurich = {138, 52, 118, 136, 85, 276, 103, 87, 214, 101};
-
-        // Sort and print the distances
-        Sorting.sortedDistances(distanceFromZurich, citiesFromZurich);
+// Custom Exception Class
+class InvalidToVoteException extends Exception {
+    public InvalidToVoteException(String message) {
+        super(message);
     }
 }
 
+// Main Class
+public class VoterIDApplication {
+    // Method to check voting eligibility
+    public static void checkEligibility(int age) throws InvalidToVoteException {
+        if (age < 18) {
+            throw new InvalidToVoteException("Age is below 18. Not eligible to vote.");
+        } else {
+            System.out.println("Welcome to Vote!");
+        }
+    }
 
-
-////
-class AverageAgeCalculator {
     public static void main(String[] args) {
-        String[] ageArray = {"35", "26", "32", "44"}; // Replace with {"35", "twenty-six", "32", "44"} for testing exceptions
+        int userAge = 16; // Example age, you can test with other values
+
         try {
-            double totalAge = 0;
-            int count = 0;
-
-            for (String age : ageArray) {
-                try {
-                    totalAge += Integer.parseInt(age);
-                    count++;
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid input: " + age);
-                }
-            }
-
-            if (count > 0) {
-                double averageAge = totalAge / count;
-                System.out.println("Average Age = " + averageAge);
-            } else {
-                System.out.println("No valid ages found to calculate average.");
-            }
-        } catch (Exception e) {
-            System.out.println(e);
+            checkEligibility(userAge);
+        } catch (InvalidToVoteException e) {
+            System.out.println("Exception: " + e.getMessage());
         }
     }
 }
