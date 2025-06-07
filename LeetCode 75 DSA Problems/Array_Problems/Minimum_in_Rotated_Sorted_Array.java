@@ -1,4 +1,4 @@
-class Find Minimum_in_Rotated_Sorted_Array {
+class Solution {
     public int findMin(int[] nums) {
         int left=0;
         int right=nums.length-1;
@@ -17,6 +17,5 @@ class Find Minimum_in_Rotated_Sorted_Array {
             }
         }
         return nums[left];
-        
     }
-}
+}//sraj
