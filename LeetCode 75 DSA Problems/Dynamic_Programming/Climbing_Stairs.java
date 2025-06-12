@@ -1,19 +1,14 @@
-class Climbing_Stairs {
+class Solution {
     public int climbStairs(int n) {
-        if(2>=n){
-            return n;
-        }
-
-        int first=1;
-        int second=2;
-        int third=0;
-
+        if(n<=2) return n;
+        int oneStep=2;
+        int twoStep=1;
+        int totalStep=0;
         for(int i=3;i<=n;i++){
-            third=first+second;
-            first=second;
-            second=third;
+            totalStep=oneStep+twoStep;
+            twoStep=oneStep;
+            oneStep=totalStep;
         }
-        return third;
-
-}
+        return totalStep;
+    }
 }
