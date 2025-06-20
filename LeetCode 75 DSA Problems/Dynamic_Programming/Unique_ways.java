@@ -1,6 +1,6 @@
-class Unique_ways{
-    public int uniquePath(int m,int n){
-        int[][] dp=new dp[m][n];
+class Solution {
+    public int uniquePaths(int m, int n) {
+        int[][] dp=new int[m][n];
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(i==0 || j==0){
@@ -11,6 +11,6 @@ class Unique_ways{
                 }
             }
         }
-        return dp[m][n];
+        return dp[m-1][n-1];
     }
 }
