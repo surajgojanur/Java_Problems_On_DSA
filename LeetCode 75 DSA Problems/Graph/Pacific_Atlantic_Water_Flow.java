@@ -1,44 +1,36 @@
-class Pacific_Atlantic_Water_Flow {
-    int dir[][]={{0,1},{0,-1},{1,0},{-1,0}};
+class Solution {
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
-    List<List<Integer>> res = new ArrayList<>();
+        int rows=heights.length, cols=heights[0].length;
+        boolean[][] pac=new boolean[rows][cols];
+        boolean[][] atl=new boolean[rows][cols];
 
-    if (heights == null || heights.length == 0 || heights[0].length == 0) {
-        return res;
-    }
+        for(int col=0;col<cols;col++){
+            dfs(0,col,rows,cols,pac,heights[0][col],heights);
+            dfs(rows-1,col,rows,cols,atl,heights[rows-1][col],heights);
+        }
+        for(int row=0;row<rows;row++){
+            dfs(row,0,rows,cols,pac,heights[row][0],heights);
+            dfs(row,cols-1,rows,cols,atl,heights[row][cols-1],heights);
+        }
 
-    int row = heights.length, col = heights[0].length;
-    boolean[][] pacific = new boolean[row][col];
-    boolean[][] atlantic = new boolean[row][col];
-
-    for (int i = 0; i < row; i++) {
-        dfs(heights, i, 0, Integer.MIN_VALUE, pacific);
-        dfs(heights, i, col - 1, Integer.MIN_VALUE, atlantic);
-    }
-
-    for (int i = 0; i < col; i++) {
-        dfs(heights, 0, i, Integer.MIN_VALUE, pacific);
-        dfs(heights, row - 1, i, Integer.MIN_VALUE, atlantic);
-    }
-
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < col; j++) {
-            if (pacific[i][j] && atlantic[i][j]) {
-                res.add(Arrays.asList(i, j));
+        List<List<Integer>> result=new ArrayList<List<Integer>>();
+        for(int i=0;i<rows;i++){
+            for(int j=0;j<cols;j++){
+                if(atl[i][j]&&pac[i][j]){
+                    result.add(Arrays.asList(i,j));
+                }
             }
         }
+        return result;
     }
-    return res;
-}
-    public void dfs(int[][] heights, int i, int j, int prev, boolean[][] ocean) {
-    if (i < 0 || i >= ocean.length || j < 0 || j >= ocean[0].length)
-        return;
-    if (heights[i][j] < prev || ocean[i][j])
+    private void dfs(int row,int col,int rows,int cols,boolean[][] visited,int preh,int[][] heights){
+        if(row<0 || row>=rows || col<0 || col>=cols || visited[row][col] || preh>heights[row][col])
         return;
 
-    ocean[i][j] = true;
-    for (int[] d : dir) {
-        dfs(heights, i + d[0], j + d[1], heights[i][j], ocean); // Fix is here: j+d[1] instead of i+d[1]
+        visited[row][col]=true;
+        dfs(row+1,col,rows,cols,visited,heights[row][col],heights);
+        dfs(row-1,col,rows,cols,visited,heights[row][col],heights);
+        dfs(row,col-1,rows,cols,visited,heights[row][col],heights);
+        dfs(row,col+1,rows,cols,visited,heights[row][col],heights);
     }
-}
 }
