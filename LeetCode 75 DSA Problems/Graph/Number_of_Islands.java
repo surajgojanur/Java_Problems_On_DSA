@@ -1,35 +1,28 @@
-class Number_of_Islands {
+class Solution {
     public int numIslands(char[][] grid) {
-        if(grid==null || grid.length==0){
-            return 0;
-        }
+        int rows=grid.length, cols=grid[0].length;
+        boolean[][] visited=new boolean[rows][cols];
         int count=0;
-        int rows=grid.length;
-        int cols=grid[0].length;
-
         for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
-                if(grid[i][j]=='1'){
+                if(grid[i][j]=='1' && visited[i][j]==false){
+                    dfs(i,j,rows,cols,visited,grid);
                     count++;
-                    dfs(grid,i,j);
                 }
             }
         }
         return count;
     }
-    private void dfs(char[][] grid, int row, int col) {
-    int rows = grid.length;
-    int cols = grid[0].length;
-
-    if (row < 0 || col < 0 || row >= rows || col >= cols || grid[row][col] != '1') {
-        return;
+    
+    private void dfs(int row,int col,int rows,int cols,boolean[][] visited,char[][] grid){
+        if(row<0 || col<0 || row>=rows || col>=cols || visited[row][col] || grid[row][col]=='0'){
+            return;
+        }
+            visited[row][col]=true;
+        
+        dfs(row+1,col,rows,cols,visited,grid);
+        dfs(row-1,col,rows,cols,visited,grid);
+        dfs(row,col+1,rows,cols,visited,grid);
+        dfs(row,col-1,rows,cols,visited,grid);
     }
-    grid[row][col] = '0';
-
-    // Explore adjacent cells
-    dfs(grid, row + 1, col);
-    dfs(grid, row - 1, col);
-    dfs(grid, row, col + 1);
-    dfs(grid, row, col - 1);
-}
 }
